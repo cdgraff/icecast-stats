@@ -1,22 +1,19 @@
--- Dumping database structure for icecast_stats
-CREATE DATABASE IF NOT EXISTS `icecast_stats` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `icecast_stats`;
-
-
--- Dumping structure for table icecast_stats.icecast
-CREATE TABLE IF NOT EXISTS `icecast` (
-  `id` int(11) NOT NULL auto_increment,
-  `icecast_id` int(11) NOT NULL,
-  `datetime_start` datetime NOT NULL,
-  `datetime_end` datetime default NULL,
-  `ip` varchar(20) NOT NULL,
-  `country_code` varchar(4) default NULL,
-  `mount` varchar(60) NOT NULL,
-  `duration` int(11) default NULL,
-  `agent` varchar(200) default NULL,
-  `server` varchar(50) default NULL,
-  `port` int(11) default NULL,
-  `user` varchar(20) default NULL,
-  `pass` varchar(20) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `icecast` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`icecast_id` INT(11) NOT NULL,
+	`datetime_start` DATETIME NOT NULL,
+	`datetime_end` DATETIME NULL DEFAULT NULL,
+	`ip` VARCHAR(20) NOT NULL,
+	`country_code` VARCHAR(4) NULL DEFAULT NULL,
+	`mount` VARCHAR(60) NOT NULL,
+	`duration` INT(11) NULL DEFAULT NULL,
+	`sent_bytes` INT(11) NULL DEFAULT NULL,
+	`agent` VARCHAR(200) NULL DEFAULT NULL,
+	`referrer` VARCHAR(400) NULL DEFAULT NULL,
+	`server` VARCHAR(50) NULL DEFAULT NULL,
+	`port` INT(11) NULL DEFAULT NULL,
+	`user` VARCHAR(20) NULL DEFAULT NULL,
+	`pass` VARCHAR(20) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='latin1_swedish_ci' ENGINE=InnoDB
